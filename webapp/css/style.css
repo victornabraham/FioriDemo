@@ -1,0 +1,42 @@
+.sapMBtnInner {
+    font-size: 1.2rem;
+    height: 2.25rem;
+    min-width: 2.25rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    border-radius: 0.25rem;
+	text-shadow: 1px 0.5px 0px #00BAFF
+}
+
+html.sap-desktop ::-webkit-scrollbar-thumb {
+    background-color: #0072ff4a;
+}
+
+.sapMLabel {
+    color: #0094ff;
+    font-size: 1.3rem;
+    font-family: "72","72full",Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: text;
+    overflow: hidden;
+}
+
+.sapMLIB {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    background: #83b3ff2e;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0 1rem 0 1rem;
+}
+
+.sapMTBStandard {
+    border-bottom: 1px solid #0853a0;
+}
+

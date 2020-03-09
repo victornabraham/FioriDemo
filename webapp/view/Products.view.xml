@@ -1,0 +1,109 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="FIORI_DEMO.VictorFioriDemo.controller.Products">
+	<App>
+	<pages>
+	    <Page xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" title="{i18n>productTitle}" backgroundDesign="Solid" icon="sap-icon://locked" showNavButton="true" navButtonTap="action" action:wiring="\{'navButtonTap':\{'navigation':\{'routeName':'Account'\}\}\}" id="page1">
+	        <content>
+	            <Label xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" width="100%" id="label0" text="{i18n>appDescription}" textAlign="Center"/>
+	            <OverflowToolbar xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" width="100%" id="toolbar1" design="Transparent">
+	                <content>
+	                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Home" id="Account" tap="action" action:wiring="\{'tap':\{'navigation':\{'routeName':'Account'\}\},'press':\{'navigation':\{'routeName':'Account'\}\}\}" press="action" icon="sap-icon://home"/>
+	                    <ToolbarSeparator xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="separator1_copy2"/>
+	                    <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="Customers" id="button0_copy2" icon="sap-icon://customer" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'Customers'\}\}\}"/>
+	                    <ToolbarSeparator xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" id="separator0_copy"/>
+	                    <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="Employees" id="button0_copy3" icon="sap-icon://employee-pane" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'Employees'\}\}\}"/>
+	                    <ToolbarSeparator id="separator0"/>
+	                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Suppliers" id="button2" tap="action" action:wiring="\{'tap':\{'navigation':\{'routeName':'Suppliers'\}\},'press':\{'navigation':\{'routeName':'Suppliers'\}\}\}" press="action" icon="sap-icon://factory"/>
+	                    <ToolbarSeparator xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="separator1_copy3"/>
+	                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Sales" id="orderButton" tap="action" action:wiring="\{'tap':\{'navigation':\{'routeName':'Orders'\}\},'press':\{'navigation':\{'routeName':'Orders'\}\}\}" press="action" icon="sap-icon://sales-order-item"/><ToolbarSeparator xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="separator1_copy"/>
+	                    <Button xmlns="sap.m" text="Create" id="button4" icon="sap-icon://add-document"/>
+	                    </content>
+	                
+	            </OverflowToolbar>
+	            <OverflowToolbar xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" width="100%" id="toolbar2">
+	                <content>
+	                    <Text xmlns="sap.m" text="Product Information" id="text0_1583182031991" width="25%"/>
+	                    <RadioButton xmlns="sap.m" groupName="GroupA" text="Lock" id="button0"/>
+	                    <RadioButton xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" groupName="GroupA" text="Unlock" id="button0_copy"/>
+	                    <SearchField xmlns="sap.m" placeholder="Search for ..." liveChange="onSearch" id="field0" width="40%"/>
+	                    </content>
+	                
+	            </OverflowToolbar>
+	            <Table xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" noDataText="Drop column list items here and columns in the area above" items="{/Products}" id="table0">
+	                <items>
+	                    <ColumnListItem type="Active" id="item1_table0_0_table0_0_table0_0">
+	                        <cells>
+	                            <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" id="text3_copy2_table0_0_table0_0_table0_0" text="{ProductID}  /  {CategoryID}"/>
+	                            <Input value="{ProductName}" width="100%" id="text1_table0_0_table0_0_table0_0"/>
+	                            <Input value="{UnitPrice}" width="100%" id="text2_table0_0_table0_0_table0_0"/>
+	                            <Input value="{UnitsInStock}" width="100%" id="text3_table0_0_table0_0_table0_0"/>
+	                            <Input value="{QuantityPerUnit}" width="100%" id="text3_copy_table0_0_table0_0_table0_0"/>
+	                            <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" id="text3_copy3_table0_0_table0_0_table0_0" text="{SupplierID}"/>
+	                            <RatingIndicator xmlns="sap.m" maxValue="5" value="3" id="indicator0_table0_0"/>
+	                            <Text text="{SupplierID}" id="text1_table0_0"/>
+	                            </cells>
+	                        
+	                    </ColumnListItem>
+	                    
+	                </items>
+	                <columns>
+	                    <Column id="column0_copy">
+	                        <header>
+	                            <Label text="ProductID / CategoryID" id="label1"/>
+	                            
+	                        </header>
+	                        
+	                    </Column>
+	                    <Column id="column3">
+	                        <header>
+	                            <Text text="Name" id="text4"/>
+	                            
+	                        </header>
+	                        
+	                    </Column>
+	                    <Column id="column1">
+	                        <header>
+	                            <Label text="$Price" id="label2"/>
+	                            
+	                        </header>
+	                        
+	                    </Column>
+	                    <Column id="column2">
+	                        <header>
+	                            <Label id="label3" text="Units in Stock"/>
+	                            
+	                        </header>
+	                        
+	                    </Column>
+	                    <Column id="column4">
+	                        <header>
+	                            <Text id="text5" text="Quantity Per Unit"/>
+	                            
+	                        </header>
+	                        
+	                    </Column>
+	                    <Column id="column0">
+	                        <header>
+	                            <Label text="Supplier ID" id="label0_1583439599482"/>
+	                            
+	                        </header>
+	                        
+	                    </Column>
+	                    <Column id="column1_1583439669261">
+	                        <header>
+	                            <Text text="Ratings" id="text2"/>
+	                            
+	                        </header>
+	                        
+	                    </Column>
+	                    </columns>
+	                <customData>
+	                    <core:CustomData xmlns:core="sap.ui.core" key="w5g.dt.editable" value="true" id="data7"/>
+	                    
+	                </customData>
+	                </Table>
+	            </content>
+	        
+	    </Page>
+	</pages>
+	</App>
+</mvc:View>

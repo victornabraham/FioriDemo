@@ -1,0 +1,83 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="FIORI_DEMO.VictorFioriDemo.controller.Employees">
+	<App pages="{/Employees}">
+	<pages><Page xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="page" title="{i18n>title}" showNavButton="true" navButtonPress="action" action:wiring="\{'navButtonPress':\{'navigation':\{'routeName':'Account'\}\},'navButtonTap':\{'navigation':\{'routeName':'Account'\}\}\}" navButtonTap="action">
+	        <content>
+	            <Label width="100%" id="label0" text="{i18n>appDescription}" textAlign="Center"/>
+	            <OverflowToolbar width="100%" id="toolbar1" design="Transparent">
+	                <content>
+	                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Home" id="Account" icon="sap-icon://home" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'Account'\}\},'tap':\{'navigation':\{'routeName':'Account'\}\}\}" tap="action"/>
+	                    <ToolbarSeparator id="separator0"/>
+	                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Inventory" id="prodButton" icon="sap-icon://product" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'Products'\}\},'tap':\{'navigation':\{'routeName':'Products'\}\}\}" tap="action"/>
+	                    <ToolbarSeparator xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="separator1_copy2"/>
+	                    <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Customers" id="button0" icon="sap-icon://customer" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'Customers'\}\},'tap':\{'navigation':\{'routeName':'Customers'\}\}\}" tap="action"/>
+	                    <ToolbarSeparator xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="separator1_copy"/>
+	                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Suppliers" id="button2" icon="sap-icon://factory" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'Suppliers'\}\},'tap':\{'navigation':\{'routeName':'Suppliers'\}\}\}" tap="action"/>
+	                    <ToolbarSeparator id="separator1"/>
+	                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Sales" id="orderButton" icon="sap-icon://sales-order-item" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'Orders'\}\},'tap':\{'navigation':\{'routeName':'Orders'\}\}\}" tap="action"/>
+	                    <ToolbarSeparator xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="separator1_copy4"/>
+	                    <Button xmlns="sap.m" text="Create" id="button4" icon="sap-icon://add-document"/>
+	                    </content>
+	                
+	            </OverflowToolbar>
+	            <OverflowToolbar xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" width="100%" id="toolbar2">
+	                <content>
+	                    <Text xmlns="sap.m" text="Employee Information" id="text0_1583182031991"/>
+	                    <SearchField xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" placeholder="Search for ..." id="field0" width="40%"/>
+	                    </content>
+	                
+	            </OverflowToolbar>
+	            <Table xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" noDataText="Drop column list items here and columns in the area above" items="{/Employees}" id="table0_copy" growing="true" growingScrollToLoad="true">
+	                <items>
+	                    <ColumnListItem type="Active" id="item1_table0_0_copy_table0_copy_0_table0_copy_0_table0_copy_0">
+	                        <cells>
+	                            <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" id="text3_copy2_table0_0_copy_table0_copy_0_table0_copy_0_table0_copy_0" text="{EmployeeID}"/>
+	                            <Text text="Title: {Title}&#10;{FirstName} {LastName}" id="text1_copy_table0_0_copy_table0_copy_0_table0_copy_0_table0_copy_0"/>
+	                            <Text text="Phone: {HomePhone}&#10;Extension: {Extension}" id="text2_table0_0_copy_table0_copy_0_table0_copy_0_table0_copy_0"/>
+	                            <Text text="{Address} &#10;{City}, {Region}, {Country}, {PostalCode}" id="text3_copy3_table0_0_copy_table0_copy_0_table0_copy_0_table0_copy_0"/>
+	                            <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" id="text3_copy5_table0_0_copy_table0_copy_0_table0_copy_0_table0_copy_0"/>
+	                            </cells>
+	                        
+	                    </ColumnListItem>
+	                    
+	                </items>
+	                <columns>
+	                    <Column id="column0_copy">
+	                        <header>
+	                            <Label id="label1_copy" text="Employee ID"/>
+	                            
+	                        </header>
+	                        
+	                    </Column>
+	                    <Column id="column3_copy">
+	                        <header>
+	                            <Text id="text4_copy" text="Name"/>
+	                            
+	                        </header>
+	                        
+	                    </Column>
+	                    <Column id="column1_copy">
+	                        <header>
+	                            <Label id="label2_copy" text="Contact"/>
+	                            
+	                        </header>
+	                        
+	                    </Column>
+	                    <Column id="column2_copy">
+	                        <header>
+	                            <Label id="label3_copy" text="Address"/>
+	                            
+	                        </header>
+	                        
+	                    </Column>
+	                    </columns>
+	                <customData>
+	                    <core:CustomData xmlns:core="sap.ui.core" key="w5g.dt.editable" value="false" id="data12"/>
+	                    
+	                </customData>
+	                </Table>
+	            </content>
+	        
+	    </Page>
+	</pages>
+	</App>
+</mvc:View>

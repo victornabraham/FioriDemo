@@ -1,0 +1,64 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="FIORI_DEMO.VictorFioriDemo.controller.Account">
+	<App>
+	<pages>
+	    <Page xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" title="{i18n>accountTitle}" id="page1">
+	        <content>
+	            <Label xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" width="100%" id="label0_copy" text="{i18n>appDescription}" textAlign="Center"/><OverflowToolbar xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" width="100%" id="toolbar1" design="Transparent">
+	                <content>
+	                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Inventory" id="prodButton" tap="action" action:wiring="\{'tap':\{'navigation':\{'routeName':'Product'\}\},'press':\{'navigation':\{'routeName':'Products'\}\}\}" press="action" activeIcon="sap-icon://product" icon="sap-icon://product"/>
+	                    <ToolbarSeparator id="separator1"/>
+	                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Customers" id="button0" icon="sap-icon://customer" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'Customers'\}\}\}"/>
+	                    <ToolbarSeparator xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="separator1_copy4"/>
+	                    <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Employees" id="button0_copy" icon="sap-icon://employee-pane" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'Employees'\}\}\}"/>
+	                    <ToolbarSeparator xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="separator1_copy"/>
+	                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Suppliers" id="button2" tap="action" action:wiring="\{'tap':\{'navigation':\{'routeName':'Suppliers'\}\},'press':\{'navigation':\{'routeName':'Suppliers'\}\}\}" press="action" icon="sap-icon://factory"/>
+	                    <ToolbarSeparator xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="separator1_copy2"/>
+	                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Sales" id="orderButton" tap="action" action:wiring="\{'tap':\{'navigation':\{'routeName':'Orders'\}\},'press':\{'navigation':\{'routeName':'Orders'\}\}\}" press="action" icon="sap-icon://sales-order-item"/>
+	                    <ToolbarSeparator xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="separator1_copy3"/>
+	                    <Button xmlns="sap.m" text="CREATE" id="button4" icon="sap-icon://add-document"/>
+	                    </content>
+	                
+	            </OverflowToolbar>
+	            <sap.ui.layout:ResponsiveSplitter xmlns:sap.ui.layout="sap.ui.layout" defaultPane="__pane0" id="splitter0">
+	                <sap.ui.layout:rootPaneContainer>
+	                    <sap.ui.layout:PaneContainer id="container0">
+	                        <sap.ui.layout:panes>
+	                            <sap.ui.layout:SplitPane requiredParentWidth="50" id="pane0">
+	                                <sap.ui.layout:content>
+	                                    <Panel height="100%" backgroundDesign="Transparent" id="panel0">
+	                                        <layoutData>
+	                                            <sap.ui.layout:SplitterLayoutData id="data6"/>
+	                                        </layoutData>
+	                                    <content>
+	                                        <Label text="{i18n>tasklabel}" width="100%" id="label0"/><List noDataText="Drop list items here" items="{path:'/Order_Details',parameters:{expand:'Product,Order'}}" id="list0_1583510695493">
+	                                            <items>
+	                                                <StandardListItem type="Navigation" icon="sap-icon://my-sales-order" title="({Order/OrderID}) Due:{Order/RequiredDate}"/>
+	                                            </items>
+	                                        </List>
+	                                    </content>
+	                                    </Panel>
+	                                </sap.ui.layout:content>
+	                            </sap.ui.layout:SplitPane>
+	                            <sap.ui.layout:SplitPane requiredParentWidth="50" id="pane1">
+	                                <sap.ui.layout:content>
+	                                    <Panel height="100%" backgroundDesign="Transparent" id="panel1">
+	                                        <layoutData>
+	                                            <sap.ui.layout:SplitterLayoutData id="data8"/>
+	                                        </layoutData>
+	                                    <content>
+	                                        <Label xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout="sap.ui.layout" text="{i18n>feedlabel}" width="100%" id="label0_copy2"/>
+	                                        <FeedInput xmlns="sap.m" post="onPost" icon="http://upload.wikimedia.org/wikipedia/commons/a/aa/Dronning_victoria.jpg" class="sapUiSmallMarginTopBottom" id="input0"/>
+	                                        <FeedListItem sender="{Author}" icon="{AuthorPicUrl}" senderPress="onSenderPress" iconPress="onIconPress" iconDensityAware="false" info="{Type}" timestamp="{Date}" text="{Text}"/>
+	                                    </content>
+	                                    </Panel>
+	                                </sap.ui.layout:content>
+	                            </sap.ui.layout:SplitPane></sap.ui.layout:panes>
+	                    </sap.ui.layout:PaneContainer>
+	                </sap.ui.layout:rootPaneContainer>
+	            </sap.ui.layout:ResponsiveSplitter>
+	            </content>
+	        
+	    </Page>
+	</pages>
+	</App>
+</mvc:View>

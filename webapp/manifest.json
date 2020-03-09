@@ -1,0 +1,187 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "FIORI_DEMO.VictorFioriDemo",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"northwind.svc": {
+				"uri": "/Northwind/V2/northwind/northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "FIORI_DEMO.VictorFioriDemo.view.Start",
+			"type": "XML",
+			"async": true,
+			"id": "Start"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "FIORI_DEMO.VictorFioriDemo.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "northwind.svc",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css",
+					"id": ""
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "FIORI_DEMO.VictorFioriDemo.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "RouteStart",
+					"pattern": "RouteStart",
+					"target": [
+						"TargetStart"
+					]
+				},
+				{
+					"name": "Account",
+					"pattern": "Account",
+					"target": [
+						"Account"
+					]
+				},
+				{
+					"name": "Orders",
+					"pattern": "Orders",
+					"target": [
+						"Orders"
+					]
+				},
+				{
+					"name": "Suppliers",
+					"pattern": "Suppliers",
+					"target": [
+						"Suppliers"
+					]
+				},
+				{
+					"name": "Products",
+					"pattern": "Products",
+					"target": [
+						"Products"
+					]
+				},
+				{
+					"name": "Employees",
+					"pattern": "Employees",
+					"target": [
+						"Employees"
+					]
+				},
+				{
+					"name": "Customers",
+					"pattern": "Customers",
+					"target": [
+						"Customers"
+					]
+				}
+			],
+			"targets": {
+				"TargetStart": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "Start",
+					"viewName": "Start"
+				},
+				"Account": {
+					"viewType": "XML",
+					"viewName": "Account",
+					"transition": "flip"
+				},
+				"Products": {
+					"viewType": "XML",
+					"viewName": "Products",
+					"transition": "show"
+				},
+				"Orders": {
+					"viewType": "XML",
+					"viewName": "Orders"
+				},
+				"Suppliers": {
+					"viewType": "XML",
+					"viewName": "Suppliers",
+					"transition": "show"
+				},
+				"Customers": {
+					"viewType": "XML",
+					"viewName": "Customers"
+				},
+				"Employees": {
+					"viewType": "XML",
+					"viewName": "Employees"
+				}
+			}
+		}
+	}
+}

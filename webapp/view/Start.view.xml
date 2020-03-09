@@ -1,0 +1,31 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="FIORI_DEMO.VictorFioriDemo.controller.Start" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+		<pages>
+		    <Page xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="page" title="{i18n>title}">
+		        <content>
+		            <Label width="100%" id="label0" text="{i18n>appDescription}" textAlign="Center"/><OverflowToolbar width="100%" id="toolbar1" design="Transparent">
+		                <content>
+		                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Home" id="Account" tap="action" action:wiring="\{'tap':\{'navigation':\{'routeName':'Account'\}\},'press':\{'navigation':\{'routeName':'Account'\}\}\}" press="action" icon="sap-icon://home"/>
+		                    <ToolbarSeparator id="separator0"/>
+		                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Inventory" id="prodButton" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'Products'\}\},'tap':\{'navigation':\{'routeName':'Product'\}\}\}" tap="action" icon="sap-icon://product"/>
+		                    <ToolbarSeparator xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="separator1_copy2"/>
+		                    <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Customers" id="button0" icon="sap-icon://customer" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'Customers'\}\}\}"/>
+		                    <ToolbarSeparator xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="separator1_copy"/>
+		                    <Button xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="Employees" id="button0_copy3" icon="sap-icon://employee-pane" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'Employees'\}\}\}"/>
+		                    <ToolbarSeparator xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="separator1_copy3"/>
+		                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Suppliers" id="button2" tap="action" action:wiring="\{'tap':\{'navigation':\{'routeName':'Suppliers'\}\},'press':\{'navigation':\{'routeName':'Suppliers'\}\}\}" press="action" icon="sap-icon://factory"/>
+		                    <ToolbarSeparator id="separator1"/>
+		                    <Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Sales" id="orderButton" tap="action" action:wiring="\{'tap':\{'navigation':\{'routeName':'Orders'\}\},'press':\{'navigation':\{'routeName':'Orders'\}\}\}" press="action" icon="sap-icon://sales-order-item"/>
+		                    <ToolbarSeparator xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" id="separator1_copy4"/>
+		                    <Button xmlns="sap.m" text="Create" id="button4" icon="sap-icon://add-document"/>
+		                    </content>
+		                
+		            </OverflowToolbar>
+		            </content>
+		        
+		    </Page>
+		</pages>
+		</App>
+	</Shell>
+</mvc:View>
